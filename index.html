@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aymen Nadi - Engineering Student in System & Network Architecture</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -86,7 +91,9 @@
             }
         }
     </script>
+    
     <style type="text/css">
+        /* Styles de base */
         .gradient-text {
             background: linear-gradient(90deg, #0ea5e9, #0284c7);
             -webkit-background-clip: text;
@@ -96,6 +103,8 @@
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0ea5e9 100%);
         }
+        
+        /* Timeline */
         .timeline-item:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -105,6 +114,8 @@
             width: 2px;
             background: #e2e8f0;
         }
+        
+        /* Animations sur hover */
         .project-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -120,6 +131,8 @@
             transform: translateY(-10px) rotate(5deg);
             box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.4);
         }
+        
+        /* Bordure cyber */
         .cyber-border {
             position: relative;
             border: 2px solid transparent;
@@ -140,6 +153,8 @@
             opacity: 1;
             animation: neon 1.5s ease-in-out infinite alternate;
         }
+        
+        /* Particles */
         #particles-js {
             position: absolute;
             width: 100%;
@@ -152,6 +167,8 @@
             position: relative;
             z-index: 1;
         }
+        
+        /* Typewriter */
         .typewriter {
             overflow: hidden;
             border-right: 3px solid #0ea5e9;
@@ -160,6 +177,8 @@
             letter-spacing: 2px;
             display: inline-block;
         }
+        
+        /* Formes flottantes */
         .floating-shapes {
             position: absolute;
             width: 100%;
@@ -176,6 +195,8 @@
             border-radius: 50%;
             filter: blur(20px);
         }
+        
+        /* Icônes de projet */
         .project-icon {
             transition: all 0.5s ease;
             filter: drop-shadow(0 5px 15px rgba(14, 165, 233, 0.4));
@@ -184,6 +205,8 @@
             transform: scale(1.2) rotate(10deg);
             filter: drop-shadow(0 10px 20px rgba(14, 165, 233, 0.6));
         }
+        
+        /* Texte dégradé dynamique */
         .dynamic-gradient-text {
             background: linear-gradient(90deg, #0ea5e9, #0284c7, #0ea5e9);
             background-size: 200% auto;
@@ -192,6 +215,8 @@
             color: transparent;
             animation: text-gradient 5s linear infinite;
         }
+        
+        /* Overlay grille cyber */
         .cyber-grid-overlay {
             position: absolute;
             top: 0;
@@ -205,6 +230,8 @@
             pointer-events: none;
             z-index: 0;
         }
+        
+        /* Effet holographique */
         .holographic-effect {
             position: relative;
             overflow: hidden;
@@ -233,6 +260,8 @@
             75% { transform: rotate(30deg) translateX(-25%) translateY(-25%); }
             100% { transform: rotate(30deg) translateX(0) translateY(0); }
         }
+        
+        /* Pluie binaire */
         .binary-rain {
             position: absolute;
             top: 0;
@@ -254,19 +283,50 @@
         @keyframes binary-fall {
             to { transform: translateY(100vh); }
         }
+        
+        /* Fix pour GitHub Pages - Navigation */
+        nav {
+            position: fixed !important;
+            width: 100% !important;
+            z-index: 1000 !important;
+        }
+        #mobile-menu {
+            z-index: 1001 !important;
+        }
+        nav.bg-white\/90 {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(8px) !important;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        section {
+            scroll-margin-top: 80px;
+        }
+        
+        /* Ajustements pour mobile */
+        @media (max-width: 768px) {
+            .typewriter {
+                font-size: 1rem;
+            }
+            .dynamic-gradient-text {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 font-sans text-gray-800">
-    <!-- Binary Rain Effect -->
+    <!-- Pluie binaire -->
     <div class="binary-rain" id="binaryRain"></div>
     
-    <!-- Cyber Grid Overlay -->
+    <!-- Overlay grille cyber -->
     <div class="cyber-grid-overlay fixed pointer-events-none"></div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+    <!-- Navigation Fixée -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50 py-2">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-14">
                 <div class="flex items-center space-x-4">
                     <div class="relative group">
                         <img src="images/redim.png"
@@ -275,38 +335,42 @@
                     </div>
                     <span class="text-xl font-bold text-primary font-heading">e-<span class="text-secondary">Portfolio</span></span>
                 </div>
+                
+                <!-- Navigation Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-primary hover:text-secondary transition relative group">
+                    <a href="#home" class="text-primary hover:text-secondary transition relative group font-medium">
                         Home
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#about" class="text-primary hover:text-secondary transition relative group">
+                    <a href="#about" class="text-primary hover:text-secondary transition relative group font-medium">
                         About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#skills" class="text-primary hover:text-secondary transition relative group">
+                    <a href="#skills" class="text-primary hover:text-secondary transition relative group font-medium">
                         Skills
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#projects" class="text-primary hover:text-secondary transition relative group">
+                    <a href="#projects" class="text-primary hover:text-secondary transition relative group font-medium">
                         Projects
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#experience" class="text-primary hover:text-secondary transition relative group">
+                    <a href="#experience" class="text-primary hover:text-secondary transition relative group font-medium">
                         Experience
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#ppp" class="text-primary hover:text-secondary transition relative group">
-                        PPP Career Project
+                    <a href="#ppp" class="text-primary hover:text-secondary transition relative group font-medium">
+                        PPP Project
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#contact" class="text-primary hover:text-secondary transition relative group">
+                    <a href="#contact" class="text-primary hover:text-secondary transition relative group font-medium">
                         Contact
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </div>
+                
+                <!-- Bouton Menu Mobile -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-toggle" class="text-primary focus:outline-none">
+                    <button id="menu-toggle" class="text-primary focus:outline-none p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -314,19 +378,22 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm pb-4 px-4 shadow-lg">
-            <a href="#home" class="block py-2 text-primary hover:text-secondary transition">Home</a>
-            <a href="#about" class="block py-2 text-primary hover:text-secondary transition">About</a>
-            <a href="#skills" class="block py-2 text-primary hover:text-secondary transition">Skills</a>
-            <a href="#projects" class="block py-2 text-primary hover:text-secondary transition">Projects</a>
-            <a href="#experience" class="block py-2 text-primary hover:text-secondary transition">Experience</a>
-            <a href="#ppp" class="block py-2 text-primary hover:text-secondary transition">PPP Career Project</a>
-            <a href="#contact" class="block py-2 text-primary hover:text-secondary transition">Contact</a>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/98 backdrop-blur-lg shadow-lg z-50">
+            <div class="px-4 py-3 space-y-1">
+                <a href="#home" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">Home</a>
+                <a href="#about" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">About</a>
+                <a href="#skills" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">Skills</a>
+                <a href="#projects" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">Projects</a>
+                <a href="#experience" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">Experience</a>
+                <a href="#ppp" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">PPP Project</a>
+                <a href="#contact" class="block py-3 px-4 text-primary hover:text-secondary hover:bg-gray-50 rounded-lg transition font-medium">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Particles -->
+    <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white relative overflow-hidden">
         <div id="particles-js"></div>
         <div class="floating-shapes">
@@ -362,13 +429,13 @@
                         </a>
                     </div>
                     <div class="mt-8 flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-white transition transform hover:scale-110">
+                        <a href="https://www.linkedin.com/in/aymen-nadi-2722841b6/" target="_blank" class="text-gray-300 hover:text-white transition transform hover:scale-110">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition transform hover:scale-110">
+                        <a href="#" target="_blank" class="text-gray-300 hover:text-white transition transform hover:scale-110">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition transform hover:scale-110">
+                        <a href="mailto:aymen.nadi@toulouse-inp.fr" class="text-gray-300 hover:text-white transition transform hover:scale-110">
                             <i class="fas fa-envelope text-xl"></i>
                         </a>
                     </div>
@@ -411,7 +478,7 @@
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-4 text-primary font-heading">My Background</h3>
-                        <p class="mb-4">After two years at ENSIAS focused on cybersecurity, Cloud Security, and compliance, I'm currently pursuing a double degree at ENSEEIHT (SN track - System and Network Architecture). This combination allows me to merge security expertise with a solid understanding of modern infrastructure architecture. My goal: master systems to better protect them, integrating security from the design phase (DevSecOps approach).</p>
+                        <p class="mb-4">After two years at ENSIAS focused on cybersecurity, Cloud Security, and compliance, I'm currently pursuing a double degree at ENSEEIHT (SN track - System and Network Architecture). This combination allows me to merge security expertise with a solid understanding of modern infrastructure architecture.</p>
                     </div>
                 </div>
                 <div class="md:w-1/3">
@@ -420,8 +487,7 @@
                             <i class="fas fa-bolt"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-4 text-primary font-heading">My Motivation</h3>
-                        <p class="mb-4">What motivates me is contributing to structured and responsible cybersecurity by combining technical mastery, strategic vision, and respect for regulatory requirements.
-I aim to build comprehensive expertise capable of helping organizations secure their systems sustainably and comply with standards.</p>
+                        <p class="mb-4">What motivates me is contributing to structured and responsible cybersecurity by combining technical mastery, strategic vision, and respect for regulatory requirements. I aim to build comprehensive expertise capable of helping organizations secure their systems sustainably and comply with standards.</p>
                     </div>
                 </div>
                 <div class="md:w-1/3 mt-8 md:mt-0">
@@ -1018,7 +1084,24 @@ I aim to build comprehensive expertise capable of helping organizations secure t
                             </div>
                         </div>
                         
-                       
+                        <!-- Additional Relevant Materials -->
+                        <div class="animate-fade-in" style="animation-delay: 0.4s;">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-paperclip text-secondary mr-3"></i>
+                                <h4 class="text-lg font-medium text-gray-700">Additional Relevant Materials</h4>
+                            </div>
+                            <p class="text-gray-600 mb-3">Other documents supporting my PPP including research, analysis, and planning materials.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="downloads/cybersecurity_sector_analysis.pdf" download class="bg-white border border-secondary text-secondary hover:bg-secondary hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center">
+                                    <i class="fas fa-download mr-2"></i>
+                                    Cybersecurity Sector Analysis
+                                </a>
+                                <a href="downloads/career_planning_timeline.pdf" download class="bg-white border border-secondary text-secondary hover:bg-secondary hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center">
+                                    <i class="fas fa-download mr-2"></i>
+                                    Career Planning Timeline
+                                </a>
+                            </div>
+                        </div>
                         
                         <!-- PPP Presentation -->
                         <div class="animate-fade-in" style="animation-delay: 0.5s;">
@@ -1128,25 +1211,25 @@ I aim to build comprehensive expertise capable of helping organizations secure t
                 </div>
                 
                 <div class="md:w-1/2">
-                    <form class="bg-light p-8 rounded-xl shadow-md cyber-border">
+                    <form class="bg-light p-8 rounded-xl shadow-md cyber-border" id="contact-form">
                         <div class="mb-6 animate-fade-in" style="animation-delay: 0.1s;">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Your name">
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Your name" required>
                         </div>
                         
                         <div class="mb-6 animate-fade-in" style="animation-delay: 0.2s;">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Your email">
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Your email" required>
                         </div>
                         
                         <div class="mb-6 animate-fade-in" style="animation-delay: 0.3s;">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Message subject">
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Message subject" required>
                         </div>
                         
                         <div class="mb-6 animate-fade-in" style="animation-delay: 0.4s;">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Your message..."></textarea>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition" placeholder="Your message..." required></textarea>
                         </div>
                         
                         <button type="submit" class="w-full bg-secondary hover:bg-accent text-white font-medium py-3 px-6 rounded-lg transition transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in" style="animation-delay: 0.5s;">
@@ -1190,39 +1273,58 @@ I aim to build comprehensive expertise capable of helping organizations secure t
         </div>
     </footer>
 
+    <!-- Scripts JavaScript -->
     <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        // Mobile menu toggle - Version corrigée pour GitHub Pages
+        document.getElementById('menu-toggle').addEventListener('click', function(e) {
+            e.stopPropagation();
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for anchor links
+        // Fermer le menu mobile en cliquant ailleurs
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobile-menu');
+            const toggle = document.getElementById('menu-toggle');
+            
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling corrigé pour GitHub Pages
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
+                    // Fermer le menu mobile si ouvert
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Défilement fluide
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
+                    // Mettre à jour l'URL sans recharger la page
+                    history.pushState(null, null, targetId);
                 }
             });
         });
 
         // Animation on scroll
         const observerOptions = {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1234,137 +1336,204 @@ I aim to build comprehensive expertise capable of helping organizations secure t
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card, .timeline-item, .cyber-border').forEach(element => {
-            observer.observe(element);
-        });
-
-        // Initialize particles.js
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#0ea5e9" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#0ea5e9", opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 1 } },
-                    push: { particles_nb: 4 }
-                }
-            }
-        });
-
-        // Create floating shapes
-        function createFloatingShapes() {
-            const container = document.querySelector('.floating-shapes');
-            const shapes = ['circle', 'triangle', 'square'];
-            const colors = ['#0ea5e9', '#0284c7', '#1e293b'];
-            
-            for (let i = 0; i < 8; i++) {
-                const shape = document.createElement('div');
-                shape.classList.add('shape');
-                
-                // Random size between 50 and 150px
-                const size = Math.floor(Math.random() * 100) + 50;
-                shape.style.width = `${size}px`;
-                shape.style.height = `${size}px`;
-                
-                // Random position
-                const posX = Math.floor(Math.random() * 100);
-                const posY = Math.floor(Math.random() * 100);
-                shape.style.left = `${posX}%`;
-                shape.style.top = `${posY}%`;
-                
-                // Random animation delay
-                const delay = Math.floor(Math.random() * 6);
-                shape.style.animationDelay = `${delay}s`;
-                
-                container.appendChild(shape);
-            }
-        }
-
-        // Enhanced Typewriter Effect
-        function initTypewriter() {
-            const element = document.getElementById('typewriter-text');
-            const phrases = [
-                "Passionate about cybersecurity.",
-                "Focused on integrating security into DevOps pipelines (DevSecOps).",
-                "Specializing in compliance and risk governance in cybersecurity."
-            ];
-            
-            let currentPhrase = 0;
-            let currentChar = 0;
-            let isDeleting = false;
-            let isEnd = false;
-            
-            function type() {
-                isEnd = false;
-                const fullText = phrases[currentPhrase];
-                
-                if (isDeleting) {
-                    element.textContent = fullText.substring(0, currentChar - 1);
-                    currentChar--;
-                } else {
-                    element.textContent = fullText.substring(0, currentChar + 1);
-                    currentChar++;
-                }
-                
-                // Adjust typing speed
-                let typeSpeed = 50;
-                if (isDeleting) {
-                    typeSpeed /= 2;
-                }
-                
-                // If phrase is complete
-                if (!isDeleting && currentChar === fullText.length) {
-                    isEnd = true;
-                    typeSpeed = 2000; // pause at end
-                    isDeleting = true;
-                } else if (isDeleting && currentChar === 0) {
-                    isDeleting = false;
-                    currentPhrase = (currentPhrase + 1) % phrases.length;
-                    typeSpeed = 500;
-                }
-                
-                setTimeout(type, typeSpeed);
-            }
-            
-            // Start the typewriter effect
-            setTimeout(type, 1000);
-        }
-
-        // Create binary rain effect
-        function createBinaryRain() {
-            const container = document.getElementById('binaryRain');
-            const digits = '01';
-            const columns = Math.floor(window.innerWidth / 20);
-            
-            for (let i = 0; i < columns; i++) {
-                const digit = document.createElement('div');
-                digit.className = 'binary-digit';
-                digit.textContent = digits.charAt(Math.floor(Math.random() * digits.length));
-                digit.style.left = `${(i * 20) + Math.random() * 20}px`;
-                digit.style.animationDuration = `${5 + Math.random() * 10}s`;
-                digit.style.animationDelay = `${Math.random() * 5}s`;
-                container.appendChild(digit);
-            }
-        }
-
-        // Call the functions when DOM is loaded
+        // Observer les éléments avec délai
         document.addEventListener('DOMContentLoaded', function() {
-            createFloatingShapes();
+            setTimeout(() => {
+                document.querySelectorAll('.project-card, .timeline-item, .cyber-border').forEach(element => {
+                    observer.observe(element);
+                });
+            }, 500);
+        });
+
+        // Navigation active state
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-secondary');
+                link.classList.add('text-primary');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-primary');
+                    link.classList.add('text-secondary');
+                }
+            });
+        });
+
+        // Initialiser les effets visuels
+        function initVisualEffects() {
+            // Particles.js pour GitHub Pages
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 60, density: { enable: true, value_area: 800 } },
+                        color: { value: "#0ea5e9" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.3, random: true },
+                        size: { value: 2.5, random: true },
+                        line_linked: { 
+                            enable: true, 
+                            distance: 120, 
+                            color: "#0ea5e9", 
+                            opacity: 0.2, 
+                            width: 1 
+                        },
+                        move: { 
+                            enable: true, 
+                            speed: 1.5, 
+                            direction: "none", 
+                            random: true, 
+                            straight: false, 
+                            out_mode: "out" 
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "grab" },
+                            onclick: { enable: true, mode: "push" },
+                            resize: true
+                        },
+                        modes: {
+                            grab: { distance: 120, line_linked: { opacity: 0.3 } },
+                            push: { particles_nb: 3 }
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+
+            // Typewriter effect
+            function initTypewriter() {
+                const element = document.getElementById('typewriter-text');
+                if (!element) return;
+                
+                const phrases = [
+                    "Passionate about cybersecurity.",
+                    "Focused on integrating security into DevOps pipelines.",
+                    "Specializing in compliance and risk governance."
+                ];
+                
+                let currentPhrase = 0;
+                let currentChar = 0;
+                let isDeleting = false;
+                let isEnd = false;
+                
+                function type() {
+                    isEnd = false;
+                    const fullText = phrases[currentPhrase];
+                    
+                    if (isDeleting) {
+                        element.textContent = fullText.substring(0, currentChar - 1);
+                        currentChar--;
+                    } else {
+                        element.textContent = fullText.substring(0, currentChar + 1);
+                        currentChar++;
+                    }
+                    
+                    let typeSpeed = 50;
+                    if (isDeleting) {
+                        typeSpeed /= 2;
+                    }
+                    
+                    if (!isDeleting && currentChar === fullText.length) {
+                        isEnd = true;
+                        typeSpeed = 2000;
+                        isDeleting = true;
+                    } else if (isDeleting && currentChar === 0) {
+                        isDeleting = false;
+                        currentPhrase = (currentPhrase + 1) % phrases.length;
+                        typeSpeed = 500;
+                    }
+                    
+                    setTimeout(type, typeSpeed);
+                }
+                
+                setTimeout(type, 1000);
+            }
+
+            // Binary rain effect
+            function createBinaryRain() {
+                const container = document.getElementById('binaryRain');
+                if (!container) return;
+                
+                const digits = '01';
+                const columns = Math.floor(window.innerWidth / 25);
+                
+                for (let i = 0; i < columns; i++) {
+                    const digit = document.createElement('div');
+                    digit.className = 'binary-digit';
+                    digit.textContent = digits.charAt(Math.floor(Math.random() * digits.length));
+                    digit.style.left = `${(i * 25) + Math.random() * 15}px`;
+                    digit.style.animationDuration = `${4 + Math.random() * 8}s`;
+                    digit.style.animationDelay = `${Math.random() * 3}s`;
+                    digit.style.opacity = `${0.1 + Math.random() * 0.2}`;
+                    container.appendChild(digit);
+                }
+            }
+
+            // Floating shapes
+            function createFloatingShapes() {
+                const container = document.querySelector('.floating-shapes');
+                if (!container) return;
+                
+                for (let i = 0; i < 8; i++) {
+                    const shape = document.createElement('div');
+                    shape.classList.add('shape');
+                    
+                    // Random size between 50 and 150px
+                    const size = Math.floor(Math.random() * 100) + 50;
+                    shape.style.width = `${size}px`;
+                    shape.style.height = `${size}px`;
+                    
+                    // Random position
+                    const posX = Math.floor(Math.random() * 100);
+                    const posY = Math.floor(Math.random() * 100);
+                    shape.style.left = `${posX}%`;
+                    shape.style.top = `${posY}%`;
+                    
+                    // Random animation delay
+                    const delay = Math.floor(Math.random() * 6);
+                    shape.style.animationDelay = `${delay}s`;
+                    
+                    container.appendChild(shape);
+                }
+            }
+
+            // Initialiser tous les effets
             initTypewriter();
             createBinaryRain();
+            createFloatingShapes();
+        }
+
+        // Gestion du formulaire de contact
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Ici, vous pouvez ajouter l'envoi du formulaire via un service backend
+            // Pour l'instant, affichons un message de confirmation
+            alert(`Thank you for your message, ${name}! I will get back to you soon.`);
+            
+            // Réinitialiser le formulaire
+            this.reset();
         });
+
+        // Initialiser tout lorsque le DOM est chargé
+        document.addEventListener('DOMContentLoaded', initVisualEffects);
     </script>
 </body>
 </html>
